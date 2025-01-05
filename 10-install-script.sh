@@ -7,11 +7,11 @@ then
     echo "ERROR:: You must have sudo access to execute this script"
     # exit 1 #other than 0
 fi
-dnf list installed mysqld
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then # not installed
-    dnf install mysqld -y
+    dnf install mysql -y
     if [ $? -ne 0 ]
     then
         echo "Installing MySQL ... FAILURE"
