@@ -6,13 +6,13 @@ if [ $USERID -ne 0 ]
 then
     echo "ERROR:: You must have sudo access to execute this script"
     echo "test: $USERID"
-    # exit 1 #other than 0
+    exit 1 #other than 0
 fi
-dnf list installed mysql-server
+dnf list installed mysql
 
 # if [ $? -ne 0 ]
 # then # not installed
-#     dnf install mysql-server -y
+#     dnf install mysql -y
 #     if [ $? -ne 0 ]
 #     then
 #         echo "Installing MySQL ... FAILURE"
