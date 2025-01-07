@@ -25,7 +25,7 @@ then # not installed
 fi
 
 
-# dnf list installed git -y
+dnf list installed git -y
 
 # if [$? -ne 0]
 #     then #not Installed
