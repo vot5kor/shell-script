@@ -1,13 +1,6 @@
 #!/bin/bash 
 
 USERID=$(id -u)
-
-if [ $USERID -ne 0 ]
-then
-    echo "ERROR:: You must have sudo access to execute this script"
-    echo "test: $USERID"
-    exit 1 #other than 0
-fi
 VALIDATE()
 {
              if [ $1 -ne 0 ]
@@ -18,6 +11,14 @@ VALIDATE()
                  echo "$2 ... SUCCESSFULLY"
             fi
 }
+
+
+if [ $USERID -ne 0 ]
+then
+    echo "ERROR:: You must have sudo access to execute this script"
+    echo "test: $USERID"
+    exit 1 #other than 0
+fi
 
 dnf list installed git -y
 
