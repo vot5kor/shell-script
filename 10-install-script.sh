@@ -27,7 +27,7 @@ fi
 
 dnf list installed git -y
 
-if [ $? -ne 0 ]
+if [$? -ne 0]
     then #not Installed
     dnf install git -y
     if [$? -ne 0]
