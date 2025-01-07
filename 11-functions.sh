@@ -1,14 +1,18 @@
 #!/bin/bash 
 
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+
 VALIDATE()
 {
              if [ $1 -ne 0 ]
                 then # not Installed
-                echo "$2 ... FAILED"
+                echo -e "$2 ... $R FAILED $N"
                 exit 1
                 else
-                 echo "$2 ... SUCCESSFULLY"
+                 echo -e "$2 ... $G SUCCESSFULLY $N"
             fi
 }
 
@@ -34,7 +38,7 @@ if [ $? -ne 0 ]
         # echo "Installing GIT ... SUCCESSFULLY"
     # fi
 else
-echo "GIT Already ... INSTALLED"
+echo -e "GIT Already ... $Y INSTALLED $N"
 fi
 
 dnf list installed mysql
@@ -50,7 +54,7 @@ then # not installed
         # echo "Installing MYSQL ....SUCCESSFULLY"
     # fi
     else
-    echo "MYSQL Already... INSTALLED"
+    echo -e "MYSQL Already... $Y INSTALLED $N"
 fi
 
 
