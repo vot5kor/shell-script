@@ -8,7 +8,7 @@ then
     echo "test: $USERID"
     # exit 1 #other than 0
 fi
-# dnf list installed mysql-server
+dnf list installed mysql-server
 
 # if [ $? -ne 0 ]
 # then # not installed
