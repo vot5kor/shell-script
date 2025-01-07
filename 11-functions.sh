@@ -28,7 +28,7 @@ dnf list installed git -y
 
 if [ $? -ne 0 ]
     then #not Installed
-    dnf install git -y
+    dnf install git1 -y
     VALIDATE $? "Installing GIT"
     # if [ $? -ne 0 ]
         # then # not Installed
