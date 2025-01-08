@@ -36,7 +36,7 @@ dnf list installed git -y &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
     then #not Installed
-    dnf install git1 -y &>>$LOG_FILE_NAME
+    dnf install git -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing GIT"
     # if [ $? -ne 0 ]
         # then # not Installed
