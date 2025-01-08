@@ -34,7 +34,7 @@ then
 fi
 }
 
-CHECK_ROOT()
+CHECK_ROOT
 for package in $@
 do
 
