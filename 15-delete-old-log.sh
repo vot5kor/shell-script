@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIRECTORY=/tmp/app-logs
+SOURCE_DIRECTORY="/home/ec2-user/app-logs"
 
 R="\e[31m"
 G="\e[32m"
