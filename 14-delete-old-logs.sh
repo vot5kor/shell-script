@@ -25,7 +25,7 @@ VALIDATE()
             fi
 }
 
-echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+# echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 CHECK_ROOT(){
 if [ $USERID -ne 0 ]
