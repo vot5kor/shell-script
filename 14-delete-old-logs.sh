@@ -43,7 +43,7 @@ VALIDATE $? "creating shellscript-log folder "
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 # FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" | awk -F "/" '{print $NF}' | cut -f1)
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14| awk -F "/" '{print $NF}' | cut -f1)
 echo "Files to be deleted: $FILES_TO_DELETE"
 
 while read -r filepath # here filepath is the variable name, you can give any name
