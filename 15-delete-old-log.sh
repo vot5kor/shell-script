@@ -16,6 +16,7 @@ else
 fi
 
 FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+echo "Files to be deleted: $FILES"
 
 while IFS= read -r line
 do
