@@ -25,7 +25,7 @@ VALIDATE()
             fi
 }
 
-# echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
 
 CHECK_ROOT(){
 if [ $USERID -ne 0 ]
@@ -36,13 +36,12 @@ then
 fi
 }
 
-# mkdir $LOG_FILE
-# VALIDATE $? "creating log folder"
 mkdir -p $LOG_FILE
 VALIDATE $? "creating shellscript-log folder "
 echo "log_file name: $LOG_FILE"
-
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" | awk -F "/" '{print $NF}' | cut -f1)
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+# FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" | awk -F "/" '{print $NF}' | cut -f1)
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 echo "Files to be deleted: $FILES_TO_DELETE"
 
 while read -r filepath # here filepath is the variable name, you can give any name
