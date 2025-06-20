@@ -36,7 +36,7 @@ then
 fi
 }
 
-mkdir -P$LOG_FILE_NAME
+mkdir $LOG_FILE_NAME
 VALIDATE $? "creating log folder"
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" | awk -F "/" '{print $NF}' | cut -f1)
