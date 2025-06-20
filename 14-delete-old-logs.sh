@@ -38,6 +38,8 @@ fi
 
 # mkdir $LOG_FILE
 # VALIDATE $? "creating log folder"
+mkdir -p $LOG_FILE
+VALIDATE $? "creating shellscript-log folder "
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" | awk -F "/" '{print $NF}' | cut -f1)
 echo "Files to be deleted: $FILES_TO_DELETE"
