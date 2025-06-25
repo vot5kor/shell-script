@@ -21,6 +21,10 @@ USAGE(){
 }
 
 mkdir -p /home/ec2-user/shellscript-logs
+if [ $? -eq 0 ]
+then
+    echo  "file created"
+fi
 
 if [ $# -lt 2 ]
 then
