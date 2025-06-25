@@ -9,6 +9,12 @@ SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} # if user is not providing number of days, we are taking 14 as default
 
+mkdir -p /home/ec2-user/shellscript-logs
+if [ $? -eq 0 ]
+then
+    echo  "file created"
+fi
+
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
 LOG_FILE=$(echo $0 | awk -F "/" '{print $NF}' | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
@@ -19,12 +25,6 @@ USAGE(){
     echo -e "$R USAGE:: $N backup <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
     exit 1
 }
-
-mkdir -p /home/ec2-user/shellscript-logs
-if [ $? -eq 0 ]
-then
-    echo  "file created"
-fi
 
 if [ $# -lt 2 ]
 then
