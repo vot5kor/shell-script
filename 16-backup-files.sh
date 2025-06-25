@@ -39,8 +39,8 @@ then
     exit 1
 fi
 echo "file name: $0"
-echo "log file: $log_file_name"
-echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+echo "log file: $$LOG_FILE_NAME"
+echo "Script started executing at: $TIMESTAMP" & >>$LOG_FILE_NAME
 
 # FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
